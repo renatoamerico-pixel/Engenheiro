@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaga: Engenheiro(a) de Qualidade (PJ) | Oportunidade de Serviço</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-body: #f1f5f9;
+      --bg-card: #ffffff;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-200: #e2e8f0;
+      --slate-100: #f8fafc;
+      --emerald-600: #059669;
+      --emerald-500: #10b981;
+      --emerald-50: #ecfdf5;
+      --blue-600: #2563eb;
+      --blue-50: #eff6ff;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      --radius-lg: 14px;
+      --radius-md: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--slate-800);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Bar */
+    .topbar {
+      background-color: var(--slate-900);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .topbar-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, var(--emerald-500), var(--blue-600));
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .topbar-cta {
+      background-color: var(--emerald-600);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.55rem 1.1rem;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .topbar-cta:hover {
+      background-color: var(--emerald-500);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--slate-900) 0%, #16243d 100%);
+      color: #ffffff;
+      padding: 4rem 1.5rem 5.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(16, 185, 129, 0.14) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #6ee7b7;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--emerald-500);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--emerald-500);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.85rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 1.08rem;
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.5rem 0.95rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #f8fafc;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1080px;
+      margin: -2.75rem auto 4rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 1.75rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Cards */
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background-color: var(--blue-50);
+      color: var(--blue-600);
+      display: inline-grid;
+      place-items: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .card p {
+      color: var(--slate-600);
+      margin-bottom: 1rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Lists */
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      color: var(--slate-700);
+      font-size: 0.965rem;
+    }
+
+    .check-badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background-color: var(--emerald-50);
+      color: var(--emerald-600);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .star-badge {
+      background-color: var(--blue-50);
+      color: var(--blue-600);
+    }
+
+    /* Tools Pills */
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    .tool-chip {
+      background-color: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-700);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    /* Sidebar Summary */
+    .sidebar-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+      position: sticky;
+      top: 5.25rem;
+    }
+
+    .sidebar-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .meta-item {
+      margin-bottom: 1.1rem;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--slate-500);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .meta-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--slate-900);
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: var(--emerald-600);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+      margin-top: 1.5rem;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--emerald-500);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--slate-100);
+      color: var(--slate-800);
+      border: 1px solid var(--slate-200);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.2rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--slate-200);
+    }
+
+    /* Application Form */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--slate-700);
+    }
+
+    input, textarea, select {
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      background-color: var(--slate-100);
+      color: var(--slate-900);
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--blue-600);
+      background-color: #ffffff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    /* Result Box after Form Submit */
+    .result-box {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background-color: var(--emerald-50);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: var(--radius-md);
+    }
+
+    .result-box.visible {
+      display: block;
+    }
+
+    .result-box h4 {
+      color: var(--slate-900);
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .result-box p {
+      font-size: 0.9rem;
+      color: var(--slate-700);
+      margin-bottom: 1rem;
+    }
+
+    .result-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      color: var(--slate-500);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--slate-200);
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#" class="brand">
+        <span class="brand-icon">EQ</span>
+        <span>Sua Empresa Engenharia</span>
+      </a>
+      <a href="#candidatura" class="topbar-cta">Candidatar-se agora</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge-status">
+        <span class="dot"></span>
+        Vaga Aberta • Prestação de Serviços
+      </div>
+      <h1>Engenheiro(a) de Qualidade (PJ)</h1>
+      <p>
+        Atue na estruturação, auditoria e melhoria contínua de processos produtivos e sistemas de gestão da qualidade com autonomia técnica e foco em resultados.
+      </p>
+      <div class="hero-tags">
+        <span class="tag-pill">📄 Contrato PJ / Prestação de Serviços</span>
+        <span class="tag-pill">📍 Híbrido ou Presencial (A definir)</span>
+        <span class="tag-pill">🛡️ Registro CREA Ativo</span>
+        <span class="tag-pill">⚙️ ISO 9001 & Melhoria Contínua</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div>
+      <!-- Sobre a Oportunidade -->
+      <article class="card">
+        <h2><span class="section-icon">📋</span> Sobre a Oportunidade</h2>
+        <p>
+          Buscamos um(a) <strong>Engenheiro(a) de Qualidade</strong> para prestar serviços especializados na garantia da conformidade técnica de produtos, processos e fornecedores. O profissional será peça-chave na prevenção de falhas, redução de retrabalho e atendimento rigoroso às normas técnicas e requisitos de clientes.
+        </p>
+        <p>
+          Esta contratação é voltada para profissionais com perfil analítico, postura colaborativa em chão de fábrica ou obra e sólida vivência com ferramentas clássicas de controle e garantia da qualidade.
+        </p>
+      </article>
+
+      <!-- Responsabilidades -->
+      <article class="card">
+        <h2><span class="section-icon">🛠️</span> Principais Responsabilidades</h2>
+        <ul class="check-list">
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Implementar, manter e auditar o <strong>Sistema de Gestão da Qualidade (SGQ)</strong> conforme os requisitos da norma <strong>ISO 9001</strong>.</span>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Conduzir análises de causa raiz e planos de ação corretiva/preventiva utilizando metodologias como <strong>8D, 5 Porquês e Diagrama de Ishikawa</strong>.</span>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Elaborar e revisar documentos técnicos da qualidade: <strong>FMEA</strong> (PFMEA/DFMEA), Planos de Controle, Instruções de Trabalho e relatórios de inspeção.</span>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Aplicar técnicas de <strong>Controle Estatístico de Processo (CEP)</strong>, estudos de capabilidade (Cp/Cpk) e análise de sistemas de medição (MSA).</span>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Gerenciar indicadores de desempenho da qualidade (KPIs como taxa de refugo, PPM, retrabalho e reclamações de clientes) e emitir <strong>ART</strong> quando aplicável ao escopo.</span>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Qualificar fornecedores, acompanhar auditorias de segunda e terceira parte e validar lotes piloto / PPAP.</span>
+          </li>
+        </ul>
+
+        <div class="tools-grid">
+          <span class="tool-chip">ISO 9001:2015</span>
+          <span class="tool-chip">FMEA & Plano de Controle</span>
+          <span class="tool-chip">CEP / Minitab</span>
+          <span class="tool-chip">Metodologia 8D</span>
+          <span class="tool-chip">PPAP & APQP</span>
+          <span class="tool-chip">Lean Six Sigma</span>
+        </div>
+      </article>
+
+      <!-- Requisitos -->
+      <article class="card">
+        <h2><span class="section-icon">✅</span> Requisitos Obrigatórios</h2>
+        <ul class="check-list">
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Graduação completa em <strong>Engenharia</strong> (Produção, Mecânica, Química, Materiais, Controle e Automação ou áreas correlatas).</span>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Registro ativo e regularizado no <strong>CREA</strong>, com habilitação para emissão de ART.</span>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Experiência comprovada em Engenharia da Qualidade, Garantia da Qualidade ou Controle de Processos.</span>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <span>Domínio prático das ferramentas da qualidade (MASP, 8D, FMEA, CEP) e pacote Office / Excel avançado.</span>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <span>CNPJ ativo (ou disponibilidade para abertura) para formalização de contrato de prestação de serviços.</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Diferenciais -->
+      <article class="card">
+        <h2><span class="section-icon">🌟</span> Diferenciais Desejáveis</h2>
+        <ul class="check-list">
+          <li>
+            <span class="check-badge star-badge">★</span>
+            <span>Certificação <strong>Lean Six Sigma</strong> (Green Belt ou Black Belt).</span>
+          </li>
+          <li>
+            <span class="check-badge star-badge">★</span>
+            <span>Formação como <strong>Auditor Interno ou Líder</strong> na ISO 9001, IATF 16949 ou ISO 14001.</span>
+          </li>
+          <li>
+            <span class="check-badge star-badge">★</span>
+            <span>Conhecimento em metrologia dimensional, leitura e interpretação de desenho técnico (GD&T).</span>
+          </li>
+          <li>
+            <span class="check-badge star-badge">★</span>
+            <span>Vivência com ferramentas de BI (Power BI) para automação de dashboards de indicadores.</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Formulário de Candidatura -->
+      <article class="card" id="candidatura">
+        <h2><span class="section-icon">📩</span> Enviar Candidatura</h2>
+        <p>
+          Preencha os dados abaixo para gerar sua ficha de apresentação e encaminhar seu currículo diretamente para nossa equipe técnica.
+        </p>
+
+        <form id="applicationForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="nome">Nome completo *</label>
+              <input type="text" id="nome" name="nome" placeholder="Ex: Mariana Oliveira" required />
+            </div>
+
+            <div class="form-group">
+              <label for="crea">Número do CREA / UF *</label>
+              <input type="text" id="crea" name="crea" placeholder="Ex: 5069123456 / SP" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail de contato *</label>
+              <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp *</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required />
+            </div>
+
+            <div class="form-group full">
+              <label for="linkedin">Link do LinkedIn ou Portfólio Técnico</label>
+              <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/seu-perfil" />
+            </div>
+
+            <div class="form-group full">
+              <label for="resumo">Resumo da experiência com Qualidade / Certificações *</label>
+              <textarea id="resumo" name="resumo" placeholder="Descreva brevemente sua experiência com ISO 9001, FMEA, CEP, auditorias, segmento de atuação e disponibilidade..." required></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Preparar Envio da Candidatura</button>
+        </form>
+
+        <!-- Painel de confirmação com ações -->
+        <div class="result-box" id="resultBox">
+          <h4>✅ Ficha de candidatura pronta!</h4>
+          <p>
+            Clique no botão abaixo para abrir seu aplicativo de e-mail com os dados preenchidos (lembre-se de anexar seu currículo em PDF) ou copie o texto formatado.
+          </p>
+          <div class="result-actions">
+            <a id="mailtoLink" href="#" class="btn-primary" style="margin-top:0; width:auto;">Abrir no E-mail</a>
+            <button type="button" id="copyBtn" class="btn-secondary">Copiar Texto da Candidatura</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-card">
+      <h3>Resumo da Contratação</h3>
+
+      <div class="meta-item">
+        <div class="meta-label">Cargo / Função</div>
+        <div class="meta-value">Engenheiro(a) de Qualidade</div>
+      </div>
+
+      <div class="meta-item">
+        <div class="meta-label">Modalidade</div>
+        <div class="meta-value">Prestação de Serviços (PJ)</div>
+      </div>
+
+      <div class="meta-item">
+        <div class="meta-label">Regime de Atuação</div>
+        <div class="meta-value">Híbrido / Presencial (A combinar)</div>
+      </div>
+
+      <div class="meta-item">
+        <div class="meta-label">Remuneração</div>
+        <div class="meta-value">Compatível com o mercado (A combinar)</div>
+      </div>
+
+      <div class="meta-item">
+        <div class="meta-label">Início Previsto</div>
+        <div class="meta-value">Imediato / Sob demanda</div>
+      </div>
+
+      <div class="meta-item">
+        <div class="meta-label">Requisito Essencial</div>
+        <div class="meta-value">CREA Ativo + Experiência SGQ</div>
+      </div>
+
+      <a href="#candidatura" class="btn-primary">Candidatar-se à Vaga</a>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2026 • Sua Empresa Engenharia — Processo Seletivo para Prestação de Serviços Técnicos.</p>
+  </footer>
+
+  <script>
+    // Altere o e-mail abaixo para o endereço que receberá as candidaturas
+    const RECRUITER_EMAIL = "recrutamento@suaempresa.com.br";
+
+    const form = document.getElementById("applicationForm");
+    const resultBox = document.getElementById("resultBox");
+    const mailtoLink = document.getElementById("mailtoLink");
+    const copyBtn = document.getElementById("copyBtn");
+
+    let formattedText = "";
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const crea = document.getElementById("crea").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const telefone = document.getElementById("telefone").value.trim();
+      const linkedin = document.getElementById("linkedin").value.trim() || "Não informado";
+      const resumo = document.getElementById("resumo").value.trim();
+
+      const subject = `Candidatura PJ - Engenheiro(a) de Qualidade - ${nome}`;
+      formattedText = [
+        `CANDIDATURA: ENGENHEIRO(A) DE QUALIDADE (PJ)`,
+        `--------------------------------------------------`,
+        `Nome: ${nome}`,
+        `CREA: ${crea}`,
+        `E-mail: ${email}`,
+        `Telefone/WhatsApp: ${telefone}`,
+        `LinkedIn/Portfólio: ${linkedin}`,
+        ``,
+        `RESUMO TÉCNICO:`,
+        `${resumo}`,
+        `--------------------------------------------------`,
+        `* Currículo em anexo.`
+      ].join("\n");
+
+      mailtoLink.href = `mailto:${RECRUITER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(formattedText)}`;
+
+      resultBox.classList.add("visible");
+      resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    copyBtn.addEventListener("click", function () {
+      if (!formattedText) return;
+      navigator.clipboard.writeText(formattedText).then(() => {
+        const original = copyBtn.textContent;
+        copyBtn.textContent = "Copiado!";
+        setTimeout(() => {
+          copyBtn.textContent = original;
+        }, 2500);
+      });
+    });
+  </script>
+</body>
+</html>
